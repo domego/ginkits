@@ -1,0 +1,57 @@
+package log
+
+import (
+	std_log "log"
+	"strings"
+)
+
+var _ = std_log.Print
+
+// Level Level
+type Level int
+
+const (
+	// TRACE trace level
+	TRACE Level = iota
+	// DEBUG debug level
+	DEBUG
+	// INFO info level
+	INFO
+	// WARN warn level
+	WARN
+	// ERROR error level
+	ERROR
+)
+
+var levelColor = map[Level]string{
+	TRACE: "36",
+	DEBUG: "32",
+	INFO:  "33",
+	WARN:  "31",
+	ERROR: "31",
+}
+
+// NewLevel new level
+func NewLevel(s string) Level {
+	s = strings.ToLower(s)
+	switch s {
+	case "trace":
+		return TRACE
+	case "debug":
+		return DEBUG
+	case "info":
+		return INFO
+	case "warn":
+		return WARN
+	case "error":
+		return ERROR
+	default:
+		std_log.Printf("invalid log level '%s'", s)
+		return TRACE
+	}
+}
+
+// Color level color
+func (l Level) Color() string {
+	return levelColor[l]
+}
