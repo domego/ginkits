@@ -21,6 +21,8 @@ const (
 	WARN
 	// ERROR error level
 	ERROR
+	// FATAL fatal level
+	FATAL
 )
 
 var levelColor = map[Level]string{
@@ -29,6 +31,7 @@ var levelColor = map[Level]string{
 	INFO:  "33",
 	WARN:  "31",
 	ERROR: "31",
+	FATAL: "35",
 }
 
 // NewLevel new level
@@ -45,6 +48,8 @@ func NewLevel(s string) Level {
 		return WARN
 	case "error":
 		return ERROR
+	case "fatal":
+		return FATAL
 	default:
 		std_log.Printf("invalid log level '%s'", s)
 		return TRACE

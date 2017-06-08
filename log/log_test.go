@@ -19,3 +19,6 @@ func TestWarnf(t *testing.T) {
 func TestErrorf(t *testing.T) {
 	Errorf("%s testing.", "error")
 }
+func TestFatalf(t *testing.T) {
+	Fatalf("%s testing.", "fatal")
+}

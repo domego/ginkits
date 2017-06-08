@@ -4,9 +4,9 @@ package log
 
 import "fmt"
 
-const _Level_name = "TRACEDEBUGINFOWARNERROR"
+const _Level_name = "TRACEDEBUGINFOWARNERRORFATAL"
 
-var _Level_index = [...]uint8{0, 5, 10, 14, 18, 23}
+var _Level_index = [...]uint8{0, 5, 10, 14, 18, 23, 28}
 
 func (i Level) String() string {
 	if i < 0 || i >= Level(len(_Level_index)-1) {

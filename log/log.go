@@ -131,6 +131,12 @@ func (l *Logger) Warnf(format string, a ...interface{}) {
 	l.Output(WARN, format, a...)
 }
 
+// Fatalf fatal formated
+func (l *Logger) Fatalf(format string, a ...interface{}) {
+	l.Output(FATAL, format, a...)
+	os.Exit(1)
+}
+
 // Errorf error formated
 func (l *Logger) Errorf(format string, a ...interface{}) {
 	l.Output(ERROR, format, a...)
@@ -159,4 +165,9 @@ func Warnf(format string, a ...interface{}) {
 // Errorf error formated
 func Errorf(format string, a ...interface{}) {
 	DefaultLogger.Errorf(format, a...)
+}
+
+// Fatalf fatal formated
+func Fatalf(format string, a ...interface{}) {
+	DefaultLogger.Fatalf(format, a...)
 }
