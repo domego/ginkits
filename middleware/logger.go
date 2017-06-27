@@ -7,8 +7,8 @@ package middleware
 import (
 	"time"
 
+	"github.com/domego/gokits/log"
 	"github.com/gin-gonic/gin"
-	"github.com/lenbo-ma/gokits/log"
 )
 
 var (
