@@ -24,7 +24,7 @@ type RespErrorMessage struct {
 func RenderSuccess(c *gin.Context, data interface{}) {
 	c.JSON(200, map[string]interface{}{
 		"success": true,
-		"data":    data,
+		"result":  data,
 	})
 }
 
@@ -34,4 +34,5 @@ func RenderError(c *gin.Context, err interface{}) {
 		"success": false,
 		"error":   err,
 	})
+	c.Abort()
 }
