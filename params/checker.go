@@ -1,4 +1,4 @@
-package params
+package paramkits
 
 import (
 	kits "github.com/domego/ginkits"
