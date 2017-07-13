@@ -7,6 +7,7 @@ package middleware
 import (
 	"time"
 
+	"github.com/domego/ginkits/params"
 	"github.com/domego/gokits/log"
 	"github.com/gin-gonic/gin"
 )
@@ -63,6 +64,8 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 
 		// Process request
 		c.Next()
+
+		log.Infof("request params: %+v", paramkits.GetParams(c))
 
 		// Log only when path is not being skipped
 		if _, ok := skip[path]; !ok {
