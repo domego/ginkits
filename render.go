@@ -1,6 +1,10 @@
 package kits
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+
+	"github.com/domego/ginkits/errors"
+)
 
 const (
 	// ErrorCodeArgumentLack 缺少参数
@@ -35,4 +39,14 @@ func RenderError(c *gin.Context, err interface{}) {
 		"error":   err,
 	})
 	c.Abort()
+}
+
+func RenderErrorMessage(c *gin.Context, code string) {
+	err := errorkits.Get(code)
+	if err == nil {
+		err = &errorkits.ErrorMessage{
+			Content: "网络不给力",
+		}
+	}
+	RenderError(c, err)
 }
