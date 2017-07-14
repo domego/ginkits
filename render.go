@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/domego/ginkits/errors"
+	"github.com/domego/gokits/log"
 )
 
 const (
@@ -34,6 +35,7 @@ func RenderSuccess(c *gin.Context, data interface{}) {
 
 // RenderError 响应错误信息
 func RenderError(c *gin.Context, err interface{}) {
+	log.Warnf("%+v", err)
 	c.JSON(200, map[string]interface{}{
 		"success": false,
 		"error":   err,
@@ -48,5 +50,6 @@ func RenderErrorMessage(c *gin.Context, code string) {
 			Content: "网络不给力",
 		}
 	}
+	log.Warnf("%+v", err)
 	RenderError(c, err)
 }
