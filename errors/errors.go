@@ -18,6 +18,8 @@ const (
 	ErrorCodeInvalidSignature = 102
 	// ErrorCodeExpiredRequest 请求已过期
 	ErrorCodeExpiredRequest = 103
+	// ErrorCodeArgumentValueInvalid 非法参数值
+	ErrorCodeArgumentValueInvalid = 104
 )
 
 type ErrorMessage struct {
