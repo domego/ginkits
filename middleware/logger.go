@@ -77,14 +77,14 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 			//		userAgent := c.Request.UserAgent()
 			statusCode := c.Writer.Status()
 
-			log.Infof("%d %s %v %s %s %s %s",
+			log.Infof("\"%d\" \"%v\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
 				statusCode,
-				r.Method,
 				latency,
+				clientIP,
+				r.Method,
 				r.Host,
 				r.RequestURI,
 				r.UserAgent(),
-				clientIP,
 			)
 		}
 	}
