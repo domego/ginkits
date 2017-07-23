@@ -62,10 +62,9 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 		r := c.Request
 		path := r.URL.Path
 
+		log.Infof("params: %+v", paramkits.GetParams(c))
 		// Process request
 		c.Next()
-
-		log.Infof("request params: %+v", paramkits.GetParams(c))
 
 		// Log only when path is not being skipped
 		if _, ok := skip[path]; !ok {
