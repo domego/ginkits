@@ -12,6 +12,9 @@ type BaseParam struct {
 
 // GetParams 获取所有请求参数
 func GetParams(c *gin.Context) map[string]string {
+	if c.Request.PostForm == nil || c.Request.Form == nil {
+		c.Request.ParseForm()
+	}
 	params := make(map[string]string)
 	for k, v := range c.Request.Form {
 		params[k] = v[0]
