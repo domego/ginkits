@@ -5,8 +5,8 @@
 		{
 			"checksumSHA1": "Rr6W/KorRikhg2LvvDZOi/9KyGY=",
 			"path": "github.com/domego/gokits",
-			"revision": "98f1bf04bc5e3b64a77350a79a55a9e78ce03d99",
-			"revisionTime": "2017-07-23T14:52:59Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "vZs4/ysnoYgnlH6VmmNWAHNnUjQ=",
@@ -76,9 +76,10 @@
 		},
 		{
 			"checksumSHA1": "/OOVK5IOyCLllA6xWNpMV/QOxj4=",
+			"origin": "github.com/domego/gokits/vendor/github.com/shopspring/decimal",
 			"path": "github.com/shopspring/decimal",
-			"revision": "3526cd0bdb7f64e1178943b7dee81a0cc3d86a69",
-			"revisionTime": "2017-02-23T16:50:30Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "9Zw986fuQM/hCoVd8vmHoSM+8sU=",
@@ -94,33 +95,38 @@
 		},
 		{
 			"checksumSHA1": "Mr4ur60bgQJnQFfJY0dGtwWwMPE=",
+			"origin": "github.com/domego/gokits/vendor/golang.org/x/text/encoding",
 			"path": "golang.org/x/text/encoding",
-			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
-			"revisionTime": "2017-02-28T17:26:26Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "zeHyHebIZl1tGuwGllIhjfci+wI=",
+			"origin": "github.com/domego/gokits/vendor/golang.org/x/text/encoding/internal",
 			"path": "golang.org/x/text/encoding/internal",
-			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
-			"revisionTime": "2017-02-28T17:26:26Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "/108BuAIqv6xdIw1mi27RnopKak=",
+			"origin": "github.com/domego/gokits/vendor/golang.org/x/text/encoding/internal/identifier",
 			"path": "golang.org/x/text/encoding/internal/identifier",
-			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
-			"revisionTime": "2017-02-28T17:26:26Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "55UdScb+EMOCPr7OW0hCwDsVxpg=",
+			"origin": "github.com/domego/gokits/vendor/golang.org/x/text/encoding/simplifiedchinese",
 			"path": "golang.org/x/text/encoding/simplifiedchinese",
-			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
-			"revisionTime": "2017-02-28T17:26:26Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "ziMb9+ANGRJSSIuxYdRbA+cDRBQ=",
+			"origin": "github.com/domego/gokits/vendor/golang.org/x/text/transform",
 			"path": "golang.org/x/text/transform",
-			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
-			"revisionTime": "2017-02-28T17:26:26Z"
+			"revision": "2467867ba4bac433f1fc44658673b987c700e0cb",
+			"revisionTime": "2017-07-25T07:41:58Z"
 		},
 		{
 			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
