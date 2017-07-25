@@ -1,0 +1,181 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "Rr6W/KorRikhg2LvvDZOi/9KyGY=",
+			"path": "github.com/domego/gokits",
+			"revision": "98f1bf04bc5e3b64a77350a79a55a9e78ce03d99",
+			"revisionTime": "2017-07-23T14:52:59Z"
+		},
+		{
+			"checksumSHA1": "vZs4/ysnoYgnlH6VmmNWAHNnUjQ=",
+			"path": "github.com/domego/gokits/log",
+			"revision": "98f1bf04bc5e3b64a77350a79a55a9e78ce03d99",
+			"revisionTime": "2017-07-23T14:52:59Z"
+		},
+		{
+			"checksumSHA1": "TVLuFr27rlxtoSMnPn8TWHmV51c=",
+			"path": "github.com/domego/gorp",
+			"revision": "736c2bda08ddabb618c22af6c38170d3d9920f86",
+			"revisionTime": "2015-07-17T03:36:05Z"
+		},
+		{
+			"checksumSHA1": "QeKwBtN2df+j+4stw3bQJ6yO4EY=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
+			"revisionTime": "2017-01-09T09:34:21Z"
+		},
+		{
+			"checksumSHA1": "mb/nh0pHXCMsFOkXFrUN/VlxLHk=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "7b508186dd71146cbdb3d14f2c2e1aaaa51f7e45",
+			"revisionTime": "2017-07-19T12:49:18Z"
+		},
+		{
+			"checksumSHA1": "qqjlx9qLgTw1+t6uDDTBlCmT6DQ=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "7b508186dd71146cbdb3d14f2c2e1aaaa51f7e45",
+			"revisionTime": "2017-07-19T12:49:18Z"
+		},
+		{
+			"checksumSHA1": "YOwO5bkv3ei+GTVZqeEVB30kXDM=",
+			"path": "github.com/gin-gonic/gin/json",
+			"revision": "7b508186dd71146cbdb3d14f2c2e1aaaa51f7e45",
+			"revisionTime": "2017-07-19T12:49:18Z"
+		},
+		{
+			"checksumSHA1": "MwAJrZRDZoQ7CK2Q+T1sBbx6tC0=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "7b508186dd71146cbdb3d14f2c2e1aaaa51f7e45",
+			"revisionTime": "2017-07-19T12:49:18Z"
+		},
+		{
+			"checksumSHA1": "yqF125xVSkmfLpIVGrLlfE05IUk=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "0a4f71a498b7c4812f64969510bcb4eca251e33a",
+			"revisionTime": "2017-07-12T04:22:13Z"
+		},
+		{
+			"checksumSHA1": "eOXF2PEvYLMeD8DSzLZJWbjYzco=",
+			"path": "github.com/kr/pretty",
+			"revision": "cfb55aafdaf3ec08f0db22699ab822c50091b1c4",
+			"revisionTime": "2016-08-23T17:07:15Z"
+		},
+		{
+			"checksumSHA1": "uulQHQ7IsRKqDudBC8Go9J0gtAc=",
+			"path": "github.com/kr/text",
+			"revision": "7cafcd837844e784b526369c9bce262804aebc60",
+			"revisionTime": "2016-05-04T02:26:26Z"
+		},
+		{
+			"checksumSHA1": "YP5hO9SyMv8G23jEP6CKIqOxDKI=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "9622e0cc9d8f9be434ca605520ff9a16808fee47",
+			"revisionTime": "2017-03-04T15:25:14Z"
+		},
+		{
+			"checksumSHA1": "/OOVK5IOyCLllA6xWNpMV/QOxj4=",
+			"path": "github.com/shopspring/decimal",
+			"revision": "3526cd0bdb7f64e1178943b7dee81a0cc3d86a69",
+			"revisionTime": "2017-02-23T16:50:30Z"
+		},
+		{
+			"checksumSHA1": "9Zw986fuQM/hCoVd8vmHoSM+8sU=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "5efa3251c7f7d05e5d9704a69a984ec9f1386a40",
+			"revisionTime": "2017-06-20T10:48:52Z"
+		},
+		{
+			"checksumSHA1": "hYqtXfZxF9wtVdtl2Ib3YvO/49Y=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "76cc09b634294339fa19ec41b5f2a0b3932cea8b",
+			"revisionTime": "2017-02-28T22:35:16Z"
+		},
+		{
+			"checksumSHA1": "Mr4ur60bgQJnQFfJY0dGtwWwMPE=",
+			"path": "golang.org/x/text/encoding",
+			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
+			"revisionTime": "2017-02-28T17:26:26Z"
+		},
+		{
+			"checksumSHA1": "zeHyHebIZl1tGuwGllIhjfci+wI=",
+			"path": "golang.org/x/text/encoding/internal",
+			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
+			"revisionTime": "2017-02-28T17:26:26Z"
+		},
+		{
+			"checksumSHA1": "/108BuAIqv6xdIw1mi27RnopKak=",
+			"path": "golang.org/x/text/encoding/internal/identifier",
+			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
+			"revisionTime": "2017-02-28T17:26:26Z"
+		},
+		{
+			"checksumSHA1": "55UdScb+EMOCPr7OW0hCwDsVxpg=",
+			"path": "golang.org/x/text/encoding/simplifiedchinese",
+			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
+			"revisionTime": "2017-02-28T17:26:26Z"
+		},
+		{
+			"checksumSHA1": "ziMb9+ANGRJSSIuxYdRbA+cDRBQ=",
+			"path": "golang.org/x/text/transform",
+			"revision": "f28f36722d5ef2f9655ad3de1f248e3e52ad5ebd",
+			"revisionTime": "2017-02-28T17:26:26Z"
+		},
+		{
+			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
+			"path": "gopkg.in/bsm/ratelimit.v1",
+			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",
+			"revisionTime": "2016-02-20T15:49:07Z"
+		},
+		{
+			"checksumSHA1": "39V1idWER42Lmcmg2Uy40wMzOlo=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c",
+			"revisionTime": "2016-07-18T13:41:25Z"
+		},
+		{
+			"checksumSHA1": "qfHcJ1V1ZBKnrQdfD7gM1rH0Vp4=",
+			"path": "gopkg.in/redis.v3",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "b4Z72l8sq4xuWhR+nM5vbLQIv+o=",
+			"path": "gopkg.in/redis.v3/internal",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "tNI/mAuqqQqfYU4vuJghUroIts4=",
+			"path": "gopkg.in/redis.v3/internal/consistenthash",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "JvqkSear94dc+NgofRqBAUmLcN0=",
+			"path": "gopkg.in/redis.v3/internal/hashtag",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "ROpD4/McQLnnxpPenjA0mEZfTL8=",
+			"path": "gopkg.in/redis.v3/internal/pool",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "MGk7cSnHqiL5soaovzgcJaNH3fc=",
+			"path": "gopkg.in/yaml.v1",
+			"revision": "9f9df34309c04878acc86042b16630b0f696e1de",
+			"revisionTime": "2014-09-24T16:16:07Z"
+		},
+		{
+			"checksumSHA1": "0KwOlQV1dNUh9X8t+5s7nX5bqfk=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "a3f3340b5840cee44f372bddb5880fcbc419b46a",
+			"revisionTime": "2017-02-08T14:18:51Z"
+		}
+	],
+	"rootPath": "github.com/domego/ginkits"
+}
