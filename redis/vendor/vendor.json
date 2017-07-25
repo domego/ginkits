@@ -1,0 +1,62 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "i//Xha6c6xQjsTd7LKM3Rcm00/s=",
+			"path": "github.com/domego/ginkits/cache",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "vZs4/ysnoYgnlH6VmmNWAHNnUjQ=",
+			"origin": "github.com/domego/ginkits/vendor/github.com/domego/gokits/log",
+			"path": "github.com/domego/gokits/log",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/bsm/ratelimit.v1",
+			"path": "gopkg.in/bsm/ratelimit.v1",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "qfHcJ1V1ZBKnrQdfD7gM1rH0Vp4=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/redis.v3",
+			"path": "gopkg.in/redis.v3",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "b4Z72l8sq4xuWhR+nM5vbLQIv+o=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/redis.v3/internal",
+			"path": "gopkg.in/redis.v3/internal",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "tNI/mAuqqQqfYU4vuJghUroIts4=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/redis.v3/internal/consistenthash",
+			"path": "gopkg.in/redis.v3/internal/consistenthash",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "JvqkSear94dc+NgofRqBAUmLcN0=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/redis.v3/internal/hashtag",
+			"path": "gopkg.in/redis.v3/internal/hashtag",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		},
+		{
+			"checksumSHA1": "ROpD4/McQLnnxpPenjA0mEZfTL8=",
+			"origin": "github.com/domego/ginkits/vendor/gopkg.in/redis.v3/internal/pool",
+			"path": "gopkg.in/redis.v3/internal/pool",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		}
+	],
+	"rootPath": "github.com/domego/ginkits/redis"
+}

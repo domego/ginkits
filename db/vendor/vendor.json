@@ -1,0 +1,14 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "TVLuFr27rlxtoSMnPn8TWHmV51c=",
+			"origin": "github.com/domego/ginkits/vendor/github.com/domego/gorp",
+			"path": "github.com/domego/gorp",
+			"revision": "24a821fc8df9323ed6ea484ae6975fcddfe150f2",
+			"revisionTime": "2017-07-25T07:48:03Z"
+		}
+	],
+	"rootPath": "github.com/domego/ginkits/db"
+}
