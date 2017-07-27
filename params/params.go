@@ -21,3 +21,17 @@ func GetParams(c *gin.Context) map[string]string {
 	}
 	return params
 }
+
+// ClientInfo 用户快速获取访问信息
+type ClientInfo struct {
+	UserAgent string
+	IP        string
+}
+
+// ParseClientInfo new client info
+func ParseClientInfo(c *gin.Context) ClientInfo {
+	return ClientInfo{
+		UserAgent: c.Request.UserAgent(),
+		IP:        c.ClientIP(),
+	}
+}
