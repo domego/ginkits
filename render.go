@@ -41,7 +41,7 @@ func RenderError(c *gin.Context, err interface{}) {
 		"success": false,
 		"error":   err,
 	}
-	log.Tracef("%+v", resp)
+	log.Infof("%+v", resp)
 	c.JSON(200, resp)
 	c.Abort()
 }
