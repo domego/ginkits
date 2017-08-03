@@ -3,6 +3,7 @@ package sessionkits
 import (
 	"fmt"
 
+	"github.com/domego/gokits/log"
 	"github.com/domego/randbo"
 	"github.com/gin-gonic/gin"
 )
@@ -11,9 +12,10 @@ const (
 	// SessionKey cookie name
 	SessionKey string = "ZQSESSID"
 	// SessionTime session有效期(单位:分钟), 默认7天
-	SessionTimeout int = 7 * 24 * 60
-	sessionIDLen       = 36
-	DefaultKey         = "github.com/domego/ginkits/session"
+	SessionTimeout      int = 7 * 24 * 60
+	SessionCookieDomain     = ""
+	sessionIDLen            = 36
+	DefaultKey              = "github.com/domego/ginkits/session"
 )
 
 var Store SessionStorage
@@ -66,7 +68,8 @@ func GetSessionID(c *gin.Context) string {
 	cookieValue, _ := c.Cookie(SessionKey)
 	if cookieValue == "" {
 		cookieValue = newSessionID()
-		c.SetCookie(SessionKey, cookieValue, SessionTimeout*60, "/", "", true, true)
+		log.Debugf("set cookie, %s:%s", SessionKey, cookieValue)
+		c.SetCookie(SessionKey, cookieValue, SessionTimeout*60, "/", SessionCookieDomain, false, false)
 	}
 	return cookieValue
 }
