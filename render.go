@@ -27,19 +27,22 @@ type RespErrorMessage struct {
 
 // RenderSuccess 响应成功的数据
 func RenderSuccess(c *gin.Context, data interface{}) {
-	c.JSON(200, map[string]interface{}{
+	resp := gin.H{
 		"success": true,
 		"result":  data,
-	})
+	}
+	log.Tracef("%+v", resp)
+	c.JSON(200, resp)
 }
 
 // RenderError 响应错误信息
 func RenderError(c *gin.Context, err interface{}) {
-	log.Warnf("%+v", err)
-	c.JSON(200, map[string]interface{}{
+	resp := gin.H{
 		"success": false,
 		"error":   err,
-	})
+	}
+	log.Tracef("%+v", err)
+	c.JSON(200, resp)
 	c.Abort()
 }
 
@@ -50,6 +53,5 @@ func RenderErrorMessage(c *gin.Context, code string) {
 			Content: "网络不给力",
 		}
 	}
-	log.Warnf("%+v", err)
 	RenderError(c, err)
 }
