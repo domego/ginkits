@@ -5,6 +5,8 @@
 package middleware
 
 import (
+	"bufio"
+	"bytes"
 	"time"
 
 	"github.com/domego/ginkits/params"
@@ -22,6 +24,17 @@ var (
 	cyan    = string([]byte{27, 91, 57, 55, 59, 52, 54, 109})
 	reset   = string([]byte{27, 91, 48, 109})
 )
+
+type bufferedWriter struct {
+	gin.ResponseWriter
+	out    *bufio.Writer
+	Buffer bytes.Buffer
+}
+
+func (g *bufferedWriter) Write(data []byte) (int, error) {
+	g.Buffer.Write(data)
+	return g.out.Write(data)
+}
 
 func ErrorLogger() gin.HandlerFunc {
 	return ErrorLoggerT(gin.ErrorTypeAny)
@@ -59,33 +72,46 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Start timer
 		start := time.Now()
-		r := c.Request
-		path := r.URL.Path
 
-		log.Infof("params: %+v", paramkits.GetParams(c))
+		w := bufio.NewWriter(c.Writer)
+		buff := bytes.Buffer{}
+		newWriter := &bufferedWriter{c.Writer, w, buff}
+
+		c.Writer = newWriter
+
+		// You have to manually flush the buffer at the end
+		defer func() {
+			log.Infof("request: %+v", paramkits.GetParams(c))
+			log.Tracef("response: %s", string(newWriter.Buffer.Bytes()))
+
+			r := c.Request
+			path := r.URL.Path
+			// Log only when path is not being skipped
+			if _, ok := skip[path]; !ok {
+				// Stop timer
+				end := time.Now()
+				latency := end.Sub(start)
+
+				clientIP := c.ClientIP()
+				//		userAgent := c.Request.UserAgent()
+				statusCode := c.Writer.Status()
+
+				log.Infof("\"%d\" \"%v\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
+					statusCode,
+					latency,
+					clientIP,
+					r.Method,
+					r.Host,
+					r.RequestURI,
+					r.UserAgent(),
+				)
+			}
+
+			w.Flush()
+		}()
 		// Process request
 		c.Next()
 
-		// Log only when path is not being skipped
-		if _, ok := skip[path]; !ok {
-			// Stop timer
-			end := time.Now()
-			latency := end.Sub(start)
-
-			clientIP := c.ClientIP()
-			//		userAgent := c.Request.UserAgent()
-			statusCode := c.Writer.Status()
-
-			log.Infof("\"%d\" \"%v\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
-				statusCode,
-				latency,
-				clientIP,
-				r.Method,
-				r.Host,
-				r.RequestURI,
-				r.UserAgent(),
-			)
-		}
 	}
 }
 

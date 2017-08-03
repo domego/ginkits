@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/domego/ginkits/errors"
-	"github.com/domego/gokits/log"
+	//	"github.com/domego/gokits/log"
 )
 
 const (
@@ -31,7 +31,7 @@ func RenderSuccess(c *gin.Context, data interface{}) {
 		"success": true,
 		"result":  data,
 	}
-	log.Tracef("%+v", resp)
+	// log.Tracef("%+v", resp)
 	c.JSON(200, resp)
 }
 
@@ -41,7 +41,7 @@ func RenderError(c *gin.Context, err interface{}) {
 		"success": false,
 		"error":   err,
 	}
-	log.Infof("%+v", resp)
+	// log.Infof("%+v", resp)
 	c.JSON(200, resp)
 	c.Abort()
 }
