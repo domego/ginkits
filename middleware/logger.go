@@ -7,6 +7,7 @@ package middleware
 import (
 	"bufio"
 	"bytes"
+	"strings"
 	"time"
 
 	"github.com/domego/ginkits/params"
