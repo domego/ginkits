@@ -81,7 +81,9 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 
 		// You have to manually flush the buffer at the end
 		defer func() {
-			log.Tracef("response: %s", string(newWriter.Buffer.Bytes()))
+			if newWriter.Header().Get("Content-Type") == gin.MIMEJSON {
+				log.Tracef("response: %s", string(newWriter.Buffer.Bytes()))
+			}
 
 			r := c.Request
 			path := r.URL.Path
