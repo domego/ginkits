@@ -81,7 +81,6 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 
 		// You have to manually flush the buffer at the end
 		defer func() {
-			log.Infof("request: %+v", paramkits.GetParams(c))
 			log.Tracef("response: %s", string(newWriter.Buffer.Bytes()))
 
 			r := c.Request
@@ -110,6 +109,7 @@ func LoggerWithWriter(notlogged ...string) gin.HandlerFunc {
 			w.Flush()
 		}()
 		// Process request
+		log.Infof("request: %+v", paramkits.GetParams(c))
 		c.Next()
 
 	}
