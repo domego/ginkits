@@ -18,6 +18,15 @@ type DBConfig struct {
 	MaxOpenConns int    `yaml:"max_open_conns"`
 }
 
+// MongoDBConfig mongo db config
+type MongoDBConfig struct {
+	Address   []string `yaml:"address"`
+	Database  string   `yaml:"database"`
+	Username  string   `yaml:"username"`
+	Password  string   `yaml:"password"`
+	PoolLimit int      `yaml:"pool_limit"`
+}
+
 func (cfg *DBConfig) Source() string {
 	pwd := cfg.Password
 	if pwd != "" {
