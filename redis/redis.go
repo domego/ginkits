@@ -38,7 +38,7 @@ func DeleteCache(rc *redis.Client, key string, retryTimes int) error {
 	}
 	log.Tracef("[cache: %s]: delete cache", key)
 	var err error
-	for i := 0; i < retryTimes; i++ {
+	for i := 0; i < retryTimes+1; i++ {
 		_, err = rc.Del(key).Result()
 		if err == nil {
 			return nil
@@ -80,7 +80,7 @@ func SetModelToCache(rc *redis.Client, key string, model interface{}, ttl int) e
 func GenAutoIncrementalId(rc *redis.Client, key string, retryTimes int) int64 {
 	var id int64
 	var err error
-	for i := 0; i < retryTimes; i++ {
+	for i := 0; i < retryTimes+1; i++ {
 		if id, err = rc.Incr(key).Result(); err == nil {
 			if id == math.MaxInt64 {
 				rc.Set(key, 0, -1)
