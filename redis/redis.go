@@ -76,17 +76,21 @@ func SetModelToCache(rc *redis.Client, key string, model interface{}, ttl int) e
 	return nil
 }
 
-// GetAutoIncrementalId get auto incremental id
-func GetAutoIncrementalId(rc *redis.Client, key string) int64 {
+// GenAutoIncrementalId gen auto incremental id
+func GenAutoIncrementalId(rc *redis.Client, key string, retryTimes int) int64 {
 	var id int64
 	var err error
-	if id, err = rc.Incr(key).Result(); err != nil && err != redis.Nil {
-		log.Errorf("get auto incremental id error, %v", err)
+	for i := 0; i < retryTimes; i++ {
+		if id, err = rc.Incr(key).Result(); err == nil {
+			if id == math.MaxInt64 {
+				rc.Set(key, 0, -1)
+			}
+			log.Tracef("gen auto incremental id: %d\n", id)
+			return id
+		}
+		log.Errorf("gen auto incremental id error: %v\n", err)
 	}
-	if id == math.MaxInt64 {
-		rc.Set(key, 0, -1)
-	}
-	return id
+	return 0
 }
 
 // GetCacheToModel get cache to model
