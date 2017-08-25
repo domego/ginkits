@@ -3,6 +3,7 @@ package rediskits
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"time"
 
 	"github.com/domego/ginkits/cache"
@@ -73,6 +74,19 @@ func SetModelToCache(rc *redis.Client, key string, model interface{}, ttl int) e
 		return err
 	}
 	return nil
+}
+
+// GetAutoIncrementalId get auto incremental id
+func GetAutoIncrementalId(rc *redis.Client, key string) int64 {
+	var id int64
+	var err error
+	if id, err = rc.Incr(key).Result(); err != nil && err != redis.Nil {
+		log.Errorf("get auto incremental id error, %v", err)
+	}
+	if id == math.MaxInt64 {
+		rc.Set(key, 0, -1)
+	}
+	return id
 }
 
 // GetCacheToModel get cache to model
