@@ -3,6 +3,7 @@ package rediskits
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"time"
 
 	"github.com/domego/ginkits/cache"
@@ -37,7 +38,7 @@ func DeleteCache(rc *redis.Client, key string, retryTimes int) error {
 	}
 	log.Tracef("[cache: %s]: delete cache", key)
 	var err error
-	for i := 0; i < retryTimes; i++ {
+	for i := 0; i < retryTimes+1; i++ {
 		_, err = rc.Del(key).Result()
 		if err == nil {
 			return nil
@@ -73,6 +74,23 @@ func SetModelToCache(rc *redis.Client, key string, model interface{}, ttl int) e
 		return err
 	}
 	return nil
+}
+
+// GenAutoIncrementalId gen auto incremental id
+func GenAutoIncrementalId(rc *redis.Client, key string, retryTimes int) int64 {
+	var id int64
+	var err error
+	for i := 0; i < retryTimes+1; i++ {
+		if id, err = rc.Incr(key).Result(); err == nil {
+			if id == math.MaxInt64 {
+				rc.Set(key, 0, -1)
+			}
+			log.Tracef("gen auto incremental id: %d\n", id)
+			return id
+		}
+		log.Errorf("gen auto incremental id error: %v\n", err)
+	}
+	return 0
 }
 
 // GetCacheToModel get cache to model
