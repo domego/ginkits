@@ -1,6 +1,11 @@
 package paramkits
 
-import "github.com/gin-gonic/gin"
+import (
+	"io/ioutil"
+
+	"github.com/gin-gonic/gin"
+	"github.com/tidwall/gjson"
+)
 
 // BaseParam 请求基础参数
 type BaseParam struct {
@@ -12,10 +17,18 @@ type BaseParam struct {
 
 // GetParams 获取所有请求参数
 func GetParams(c *gin.Context) map[string]string {
+	params := make(map[string]string)
+	data, _ := ioutil.ReadAll(c.Request.Body)
+	jsonData := gjson.Parse(string(data))
+	if jsonData.IsObject() {
+		jsonData.ForEach(func(key, value gjson.Result) bool {
+			params[key.String()] = value.String()
+			return true
+		})
+	}
 	if c.Request.PostForm == nil || c.Request.Form == nil {
 		c.Request.ParseForm()
 	}
-	params := make(map[string]string)
 	for k, v := range c.Request.Form {
 		params[k] = v[0]
 	}
